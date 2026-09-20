@@ -29,7 +29,7 @@ export function BottomNavigation({
           <Ionicons
             name={activeTab === tab.key ? tab.icon : tab.outline}
             size={26}
-            color="#100d0d"
+            color={activeTab === tab.key ? "#26e718" : "#100d0d"}
           />
         </Pressable>
       ))}

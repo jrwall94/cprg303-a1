@@ -1,4 +1,4 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 export function ContentPlaceholder() {
@@ -7,6 +7,11 @@ export function ContentPlaceholder() {
       <View style={styles.postImageWrap}>
         <Image
           source={require("../assets/post.jpg")}
+          style={styles.postImage}
+          resizeMode="cover"
+        />
+        <Image
+          source={require("../assets/avatar.jpg")}
           style={styles.postImage}
           resizeMode="cover"
         />
@@ -47,14 +52,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   postImageWrap: {
+    flexDirection: "column",
     width: "100%",
-    aspectRatio: 1,
-    overflow: "hidden",
     backgroundColor: "#eee",
   },
   postImage: {
     width: "100%",
-    height: "100%",
+    height: 250,
   },
   actions: {
     flexDirection: "row",
@@ -83,7 +87,7 @@ const styles = StyleSheet.create({
     height: 18,
     borderRadius: 9,
     borderWidth: 1,
-    borderColor: "#fff",
+    borderColor: "#e11919",
   },
   tinyAvatarOverlap: {
     marginLeft: -6,
