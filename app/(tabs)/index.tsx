@@ -1,31 +1,46 @@
-import { StyleSheet } from 'react-native';
+import {
+  Alert,
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import { AppHeader } from "../../components/AppHeader";
+import { BottomNavigation } from "../../components/BottomNavigation";
+import { ContentPlaceholder } from "../../components/ContentPlaceholder";
+import { ProfileHeader } from "../../components/ProfileHeader";
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-
-export default function TabOneScreen() {
+export default function IndexScreen() {
+  const showAlert = () => Alert.alert("Alert Button pressed");
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
+        <ScrollView>
+          <AppHeader />
+          <ProfileHeader />
+          <ContentPlaceholder />
+        </ScrollView>
+        <BottomNavigation />
+        <Pressable
+          onPress={showAlert}
+          style={({ pressed }) => [
+            {
+              backgroundColor: "#2563EB",
+              padding: 16,
+              margin: 16,
+              borderRadius: 8,
+              alignItems: "center",
+            },
+            pressed && { opacity: 0.8 },
+          ]}
+        >
+          <Text style={{ color: "white", fontWeight: "700" }}>Alert</Text>
+        </Pressable>
+      </View>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+const styles = StyleSheet.create({});
