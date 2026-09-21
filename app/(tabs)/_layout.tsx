@@ -1,10 +1,10 @@
-import { Tabs } from "expo-router";
-import { SymbolView } from "expo-symbols";
-
+import { Text, View } from "@/components/Themed";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 import { useColorScheme } from "@/components/useColorScheme";
 import Colors from "@/constants/Colors";
-
+import { Tabs } from "expo-router";
+import { SymbolView } from "expo-symbols";
+import { StyleSheet } from "react-native";
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -15,6 +15,7 @@ export default function TabLayout() {
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
+        headerTitleAlign: "center",
       }}
     >
       <Tabs.Screen
@@ -28,9 +29,27 @@ export default function TabLayout() {
                 android: "home",
                 web: "home",
               }}
-              tintColor={color}
+              tintColor="#000000"
               size={28}
             />
+          ),
+          headerLeft: () => (
+            <View>
+              <SymbolView
+                name={{
+                  android: "keyboard_arrow_left",
+                  web: "keyboard_arrow_left",
+                }}
+                tintColor="#000000"
+                size={50}
+              />
+            </View>
+          ),
+          headerTitle: () => (
+            <View style={styles.container}>
+              <Text style={styles.subheader}>OOTD_EVERYDAY</Text>
+              <Text style={styles.header}>Posts</Text>
+            </View>
           ),
         }}
       />
@@ -45,7 +64,7 @@ export default function TabLayout() {
                 android: "search",
                 web: "search",
               }}
-              tintColor={color}
+              tintColor="#000000"
               size={28}
             />
           ),
@@ -62,7 +81,7 @@ export default function TabLayout() {
                 android: "play_circle",
                 web: "play_circle",
               }}
-              tintColor={color}
+              tintColor="#000000"
               size={28}
             />
           ),
@@ -79,7 +98,7 @@ export default function TabLayout() {
                 android: "shopping_bag",
                 web: "shopping_bag",
               }}
-              tintColor={color}
+              tintColor="#000000"
               size={28}
             />
           ),
@@ -96,7 +115,7 @@ export default function TabLayout() {
                 android: "account_circle",
                 web: "account_circle",
               }}
-              tintColor={color}
+              tintColor="#000000"
               size={28}
             />
           ),
@@ -105,3 +124,18 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingRight: 50,
+  },
+  header: {
+    fontWeight: "900",
+    fontSize: 15,
+  },
+  subheader: {
+    fontWeight: "100",
+  },
+});
