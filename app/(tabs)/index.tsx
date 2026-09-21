@@ -64,7 +64,7 @@ export default function TabOneScreen() {
           style={{ marginLeft: 250 }}
         />
       </View>
-      <View>
+      <View style={styles.commentsection}>
         <Text>
           Liked by <Text style={{ fontWeight: "bold" }}>Person</Text> and 7{" "}
           <Text style={{ fontWeight: "bold" }}>Others</Text>
@@ -73,7 +73,7 @@ export default function TabOneScreen() {
           <Text style={{ fontWeight: "bold" }}>Username</Text> Fresh shot on a
           sunny day!
         </Text>
-        <Text>view all 12 comments</Text>
+        <Text style={styles.commenttextsmall}>view all 12 comments</Text>
         <Text>
           <Text style={{ fontWeight: "bold" }}>comment person</Text> Awesome
           tones
@@ -149,5 +149,19 @@ const styles = StyleSheet.create({
   },
   leftsymbol: {
     justifyContent: "flex-end",
+  },
+  commentsection: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    textAlign: "left",
+    flex: 1,
+    width: "100%",
+    paddingLeft: 10,
+    gap: 5,
+  },
+  commenttext: {},
+  commenttextsmall: {
+    color: "#828282",
+    fontSize: 12,
   },
 });
