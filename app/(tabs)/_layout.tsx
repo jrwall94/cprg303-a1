@@ -1,3 +1,4 @@
+import { AppHeader } from "@/components/AppHeader";
 import { Tabs } from "expo-router";
 import { SymbolView } from "expo-symbols";
 
@@ -15,20 +16,94 @@ export default function TabLayout() {
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          height: 100,
+          paddingTop: 7,
+        },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Tab One",
+          title: "Home",
+          header: () => <AppHeader />,
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{
                 ios: "chevron.left.forwardslash.chevron.right",
-                android: "code",
-                web: "code",
+                android: "home",
+                web: "home",
               }}
-              tintColor={color}
+              tintColor="black"
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: "Search",
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: "chevron.left.forwardslash.chevron.right",
+                android: "search",
+                web: "search",
+              }}
+              tintColor="black"
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="media"
+        options={{
+          title: "Media",
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: "chevron.left.forwardslash.chevron.right",
+                android: "smart_display",
+                web: "smart_display",
+              }}
+              tintColor="black"
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="shop"
+        options={{
+          title: "Shop",
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: "chevron.left.forwardslash.chevron.right",
+                android: "shopping_bag",
+                web: "shopping_bag",
+              }}
+              tintColor="black"
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: "chevron.left.forwardslash.chevron.right",
+                android: "account_circle",
+                web: "account_circle",
+              }}
+              tintColor="black"
               size={28}
             />
           ),

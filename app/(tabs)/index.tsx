@@ -7,8 +7,8 @@ import {
   Text,
   View,
 } from "react-native";
-import { AppHeader } from "../../components/AppHeader";
-import { BottomNavigation } from "../../components/BottomNavigation";
+import { BottomSocial } from "../../components/BottomSocial";
+import { Comments } from "../../components/Comments";
 import { ContentPlaceholder } from "../../components/ContentPlaceholder";
 import { ProfileHeader } from "../../components/ProfileHeader";
 
@@ -18,11 +18,11 @@ export default function IndexScreen() {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1 }}>
         <ScrollView>
-          <AppHeader />
           <ProfileHeader />
           <ContentPlaceholder />
+          <BottomSocial />
+          <Comments />
         </ScrollView>
-        <BottomNavigation />
         <Pressable
           onPress={showAlert}
           style={({ pressed }) => [
