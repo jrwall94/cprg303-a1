@@ -1,6 +1,6 @@
 import { Text, View } from "@/components/Themed";
 import { SymbolView } from "expo-symbols";
-import { Image, StyleSheet } from "react-native";
+import { Alert, Button, Image, StyleSheet } from "react-native";
 
 export default function TabOneScreen() {
   return (
@@ -82,6 +82,10 @@ export default function TabOneScreen() {
           <Text style={{ fontWeight: "bold" }}>comment Person</Text> Gorg. Love
           it!
         </Text>
+        <Button
+          title="Alert"
+          onPress={() => Alert.alert("Alert Button pressed")}
+        />
       </View>
     </View>
   );
