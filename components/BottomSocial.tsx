@@ -5,23 +5,27 @@ export function BottomSocial() {
   return (
     <View style={styles.container}>
       <SymbolView
-        name={{ android: "favorite", web: "favorite" }}
+        name={{ ios: "heart", android: "favorite", web: "favorite" }}
         size={30}
         tintColor="black"
       />
       <SymbolView
-        name={{ android: "mode_comment", web: "mode_comment" }}
+        name={{
+          ios: "bubble.right",
+          android: "mode_comment",
+          web: "mode_comment",
+        }}
         size={30}
         tintColor="black"
       />
       <SymbolView
-        name={{ android: "send", web: "send" }}
+        name={{ ios: "paperplane", android: "send", web: "send" }}
         size={30}
         tintColor="black"
       />
       <SymbolView
         style={styles.finalItem}
-        name={{ android: "bookmark", web: "bookmark" }}
+        name={{ ios: "bookmark", android: "bookmark", web: "bookmark" }}
         size={30}
         tintColor="black"
       />

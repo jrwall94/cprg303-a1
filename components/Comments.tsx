@@ -6,17 +6,21 @@ export function Comments() {
     <View style={styles.container}>
       <View style={styles.likes}>
         <SymbolView
-          name={{ android: "face", web: "face" }}
+          name={{
+            ios: "person.crop.circle",
+            android: "face",
+            web: "face",
+          }}
           tintColor="black"
           size={15}
         />
         <SymbolView
-          name={{ android: "face_3", web: "face_3" }}
+          name={{ ios: "person.fill", android: "face_3", web: "face_3" }}
           tintColor="black"
           size={15}
         />
         <SymbolView
-          name={{ android: "face_6", web: "face_6" }}
+          name={{ ios: "person.crop.circle", android: "face_6", web: "face_6" }}
           tintColor="black"
           size={15}
         />

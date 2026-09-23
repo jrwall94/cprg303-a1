@@ -3,18 +3,11 @@ import { Tabs } from "expo-router";
 import { SymbolView } from "expo-symbols";
 
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
-import { useColorScheme } from "@/components/useColorScheme";
-import Colors from "@/constants/Colors";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
         tabBarShowLabel: false,
         tabBarStyle: {
@@ -28,10 +21,10 @@ export default function TabLayout() {
         options={{
           title: "Home",
           header: () => <AppHeader />,
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <SymbolView
               name={{
-                ios: "chevron.left.forwardslash.chevron.right",
+                ios: "house",
                 android: "home",
                 web: "home",
               }}
@@ -45,10 +38,10 @@ export default function TabLayout() {
         name="search"
         options={{
           title: "Search",
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <SymbolView
               name={{
-                ios: "chevron.left.forwardslash.chevron.right",
+                ios: "magnifyingglass",
                 android: "search",
                 web: "search",
               }}
@@ -62,10 +55,10 @@ export default function TabLayout() {
         name="media"
         options={{
           title: "Media",
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <SymbolView
               name={{
-                ios: "chevron.left.forwardslash.chevron.right",
+                ios: "play.rectangle.on.rectangle",
                 android: "smart_display",
                 web: "smart_display",
               }}
@@ -79,10 +72,10 @@ export default function TabLayout() {
         name="shop"
         options={{
           title: "Shop",
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <SymbolView
               name={{
-                ios: "chevron.left.forwardslash.chevron.right",
+                ios: "bag",
                 android: "shopping_bag",
                 web: "shopping_bag",
               }}
@@ -96,10 +89,10 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <SymbolView
               name={{
-                ios: "chevron.left.forwardslash.chevron.right",
+                ios: "person.crop.circle.fill",
                 android: "account_circle",
                 web: "account_circle",
               }}

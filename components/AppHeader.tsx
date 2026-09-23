@@ -1,5 +1,5 @@
 import { SymbolView } from "expo-symbols";
-import { StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export function AppHeader() {
@@ -7,8 +7,12 @@ export function AppHeader() {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <SymbolView
-        name={{ android: "chevron_backward", web: "chevron_backward" }}
-        size={40}
+        name={{
+          ios: "chevron.left",
+          android: "chevron_backward",
+          web: "chevron_backward",
+        }}
+        size={Platform.select({ ios: 30, android: 40, web: 40 })}
         tintColor="black"
       />
       <View style={[styles.subContainer]}>
@@ -22,7 +26,7 @@ export function AppHeader() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom: 2,
+    paddingBottom: 3,
     borderBottomWidth: 0.5,
     flexDirection: "row",
   },

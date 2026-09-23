@@ -1,12 +1,5 @@
-import {
-  Alert,
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Alert, Pressable, ScrollView, Text, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { BottomSocial } from "../../components/BottomSocial";
 import { Comments } from "../../components/Comments";
 import { ContentPlaceholder } from "../../components/ContentPlaceholder";
@@ -15,7 +8,7 @@ import { ProfileHeader } from "../../components/ProfileHeader";
 export default function IndexScreen() {
   const showAlert = () => Alert.alert("Alert Button pressed");
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaProvider style={{ flex: 1 }}>
       <View style={{ flex: 1 }}>
         <ScrollView>
           <ProfileHeader />
@@ -39,8 +32,6 @@ export default function IndexScreen() {
           <Text style={{ color: "white", fontWeight: "700" }}>Alert</Text>
         </Pressable>
       </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({});

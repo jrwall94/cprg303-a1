@@ -13,7 +13,7 @@ export function ProfileHeader() {
         <Text>via frenchi_fry39</Text>
       </View>
       <SymbolView
-        name={{ android: "more_horiz", web: "more_horiz" }}
+        name={{ ios: "ellipsis", android: "more_horiz", web: "more_horiz" }}
         size={20}
         tintColor="black"
         style={styles.finalItem}
