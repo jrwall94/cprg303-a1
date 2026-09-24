@@ -1,10 +1,10 @@
 import { Text, View } from "@/components/Themed";
 import { SymbolView } from "expo-symbols";
 import { Alert, Button, Image, StyleSheet } from "react-native";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.subcontainer}>
         <Image
           style={styles.logo}
@@ -87,7 +87,7 @@ export default function TabOneScreen() {
           onPress={() => Alert.alert("Alert Button pressed")}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
