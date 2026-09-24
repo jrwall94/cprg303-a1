@@ -1,6 +1,7 @@
 import { AppHeader } from "@/components/AppHeader";
 import { Tabs } from "expo-router";
 import { SymbolView } from "expo-symbols";
+import { Platform } from "react-native";
 
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 
@@ -11,8 +12,21 @@ export default function TabLayout() {
         headerShown: useClientOnlyValue(false, true),
         tabBarShowLabel: false,
         tabBarStyle: {
-          height: 100,
-          paddingTop: 7,
+          ...Platform.select({
+            web: {
+              height: 50,
+              width: 412,
+              alignSelf: "center",
+            },
+            ios: {
+              height: 100,
+              paddingTop: 7,
+            },
+            android: {
+              height: 100,
+              paddingTop: 7,
+            },
+          }),
         },
       }}
     >
