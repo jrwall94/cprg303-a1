@@ -1,6 +1,8 @@
 import { AppHeader } from "@/components/AppHeader";
 import { Tabs } from "expo-router";
 import { SymbolView } from "expo-symbols";
+import bold from "expo-symbols/androidWeights/bold";
+import regular from "expo-symbols/androidWeights/regular";
 import { Platform } from "react-native";
 
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
@@ -35,7 +37,7 @@ export default function TabLayout() {
         options={{
           title: "Home",
           header: () => <AppHeader />,
-          tabBarIcon: () => (
+          tabBarIcon: ({ focused }) => (
             <SymbolView
               name={{
                 ios: "house",
@@ -44,6 +46,10 @@ export default function TabLayout() {
               }}
               tintColor="black"
               size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
@@ -52,7 +58,7 @@ export default function TabLayout() {
         name="search"
         options={{
           title: "Search",
-          tabBarIcon: () => (
+          tabBarIcon: ({ focused }) => (
             <SymbolView
               name={{
                 ios: "magnifyingglass",
@@ -61,6 +67,10 @@ export default function TabLayout() {
               }}
               tintColor="black"
               size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
@@ -69,7 +79,7 @@ export default function TabLayout() {
         name="media"
         options={{
           title: "Media",
-          tabBarIcon: () => (
+          tabBarIcon: ({ focused }) => (
             <SymbolView
               name={{
                 ios: "play.rectangle.on.rectangle",
@@ -78,6 +88,10 @@ export default function TabLayout() {
               }}
               tintColor="black"
               size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
@@ -86,7 +100,7 @@ export default function TabLayout() {
         name="shop"
         options={{
           title: "Shop",
-          tabBarIcon: () => (
+          tabBarIcon: ({ focused }) => (
             <SymbolView
               name={{
                 ios: "bag",
@@ -95,6 +109,10 @@ export default function TabLayout() {
               }}
               tintColor="black"
               size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
@@ -103,15 +121,19 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: () => (
+          tabBarIcon: ({ focused }) => (
             <SymbolView
               name={{
-                ios: "person.crop.circle.fill",
+                ios: "person.crop.circle",
                 android: "account_circle",
                 web: "account_circle",
               }}
               tintColor="black"
               size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
