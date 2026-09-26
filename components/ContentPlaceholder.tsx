@@ -13,5 +13,6 @@ const styles = StyleSheet.create({
   photo: {
     height: 432,
     width: 412,
+    borderRadius: 6,
   },
 });

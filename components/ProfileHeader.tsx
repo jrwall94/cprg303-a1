@@ -9,8 +9,8 @@ export function ProfileHeader() {
         style={styles.profilePic}
       />
       <View>
-        <Text style={styles.bold}>ootd_everyday</Text>
-        <Text>via frenchi_fry39</Text>
+      <Text style={styles.bold}>daily_outfit</Text>
+      <Text style={styles.subtitle}>via street_style</Text>
       </View>
       <SymbolView
         name={{ ios: "ellipsis", android: "more_horiz", web: "more_horiz" }}
@@ -42,4 +42,9 @@ const styles = StyleSheet.create({
   bold: {
     fontWeight: "bold",
   },
+  subtitle: {
+    color: "gray",
+    fontSize: 13,
+  },
+
 });

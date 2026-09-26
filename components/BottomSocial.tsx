@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   container: {
     margin: 10,
     flexDirection: "row",
-    gap: 15,
+    gap: 20,
   },
   finalItem: {
     marginLeft: "auto",

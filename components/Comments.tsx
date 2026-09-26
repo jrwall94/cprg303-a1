@@ -25,8 +25,8 @@ export function Comments() {
           size={15}
         />
         <Text style={styles.likedBy}>
-          Liked by <Text style={styles.bold}>paisley.print.48</Text> and{" "}
-          <Text style={styles.bold}>7 others</Text>
+         Liked by <Text style={styles.bold}>photo.friend</Text> and{" "}
+         <Text style={styles.bold}>11 others</Text>
         </Text>
       </View>
       <Text>

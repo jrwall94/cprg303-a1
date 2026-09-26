@@ -35,17 +35,11 @@ export default function IndexScreen() {
           <Pressable
             onPress={showAlert}
             style={({ pressed }) => [
-              {
-                backgroundColor: "#2563EB",
-                padding: 16,
-                margin: 16,
-                borderRadius: 8,
-                alignItems: "center",
-              },
-              pressed && { opacity: 0.8 },
+              styles.alertButton,
+              pressed && styles.alertButtonPressed,
             ]}
           >
-            <Text style={{ color: "white", fontWeight: "700" }}>Alert</Text>
+            <Text style={styles.alertButtonText}>Alert</Text>
           </Pressable>
         </View>
       </View>
@@ -67,4 +61,22 @@ const styles = StyleSheet.create({
       },
     }),
   },
+alertButton: {
+  backgroundColor: "#111111",
+  marginHorizontal: 16,
+  marginVertical: 12,
+  paddingVertical: 14,
+  borderRadius: 10,
+  alignItems: "center",
+},
+
+alertButtonPressed: {
+  opacity: 0.7,
+},
+
+alertButtonText: {
+  color: "#FFFFFF",
+  fontSize: 16,
+  fontWeight: "700",
+},
 });
