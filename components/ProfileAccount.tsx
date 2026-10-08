@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
@@ -6,7 +7,7 @@ export default function ProfileAccount() {
     <View>
       <Text style={styles.steps}>
         <Text style={{ color: "orange", fontWeight: "500" }}>0 OF 5</Text> STEPS
-        COMPLETE ⌄
+        COMPLETE <Ionicons name="chevron-down-outline" />
       </Text>
       <View style={styles.info}>
         <Image
