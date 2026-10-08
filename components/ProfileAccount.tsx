@@ -1,4 +1,5 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Link } from "expo-router";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function ProfileAccount() {
   return (
@@ -25,9 +26,13 @@ export default function ProfileAccount() {
           <Text>Following</Text>
         </View>
       </View>
-      <Text>Software Developer</Text>
+      <Text style={{ marginLeft: 10 }}>Software Developer</Text>
       <View style={styles.info}>
-        <Text style={styles.linkBox}>Edit Profile</Text>
+        <Link href="../profileEdit" asChild>
+          <Pressable>
+            <Text style={styles.linkBox}>Edit Profile</Text>
+          </Pressable>
+        </Link>
         <Text style={styles.linkBox}>Promotions</Text>
         <Text style={styles.linkBox}>Insights</Text>
       </View>
