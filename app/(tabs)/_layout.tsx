@@ -78,7 +78,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="media"
         options={{
-          title: "Media",
+          title: "Reels",
+          headerShown: false,
           tabBarIcon: ({ focused }) => (
             <SymbolView
               name={{
