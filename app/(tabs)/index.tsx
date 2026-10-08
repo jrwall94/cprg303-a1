@@ -1,31 +1,33 @@
-import { StyleSheet } from 'react-native';
+import { useRouter } from "expo-router";
+import { FlatList, Text, View } from "react-native";
+import PostCard from "../../components/PostCard";
+import s from "../../constants/homeStyles";
+import { posts } from "../../data/post";
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+export default function HomeScreen() {
+  const router = useRouter();
 
-export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+    <View style={s.page}>
+      <Text style={s.title}>Instagram</Text>
+      <FlatList
+        data={posts}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <PostCard
+            id={item.id}
+            username={item.username}
+            caption={item.caption}
+            likes={item.likes}
+            onPress={() =>
+              router.push({
+                pathname: "/post/[id]",
+                params: { id: item.id },
+              })
+            }
+          />
+        )}
+      />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
