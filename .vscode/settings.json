@@ -3,6 +3,10 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
+<<<<<<< HEAD
+  }
+=======
   },
   "js/ts.tsdk.path": "node_modules\\typescript\\lib"
+>>>>>>> f6881e38fa02dd0666ca8455c7402d67815b380e
 }

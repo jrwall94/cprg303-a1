@@ -1,0 +1,51 @@
+export const posts = [
+  {
+    id: "1",
+    username: "Jhonathon",
+    via: "frenchie_fry39",
+    caption: "Fresh shot on a sunny day!",
+    likes: "Liked by paisley.print.48 and 7 others",
+  },
+  {
+    id: "2",
+    username: "Miya",
+    via: "lil_wyatt83",
+    caption: "Awesome tones",
+    likes: "Liked by pia.in.a.pod and 12 others",
+  },
+  {
+    id: "3",
+    username: "Alex",
+    via: "ootd_everyday",
+    caption: "Layered look for fall",
+    likes: "Liked by ootd_everyday and 21 others",
+  },
+  {
+    id: "4",
+    username: "Nathon",
+    via: "street_fits",
+    caption: "Night walk downtown",
+    likes: "Liked by Miya and 16 others",
+  },
+  {
+    id: "5",
+    username: "Sofia",
+    via: "frenchie_fry39",
+    caption: "Weekend market stroll",
+    likes: "Liked by Alex and 11 others",
+  },
+  {
+    id: "6",
+    username: "Leo",
+    via: "ootd_everyday",
+    caption: "Golden hour in the city",
+    likes: "Liked by Nathon and 19 others",
+  },
+  {
+    id: "7",
+    username: "Emma",
+    via: "lil_wyatt83",
+    caption: "Coffee and a new coat",
+    likes: "Liked by Jhonathon and 14 others",
+  },
+];

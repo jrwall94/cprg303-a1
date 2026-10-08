@@ -1,16 +1,36 @@
 {
   "expo": {
+<<<<<<< HEAD
+    "name": "assignment2-MinyanLiu",
+    "slug": "assignment2-MinyanLiu",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/avatar.jpg",
+    "scheme": "assignment2minyanliu",
+=======
     "name": "cprg303-a1",
     "slug": "cprg303-a1",
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "cprg303a1",
+>>>>>>> f6881e38fa02dd0666ca8455c7402d67815b380e
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
+<<<<<<< HEAD
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/avatar.jpg"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/avatar.jpg"
+=======
         "backgroundColor": "#E6F4FE"
       },
       "predictiveBackGestureEnabled": false,
@@ -19,12 +39,17 @@
     "web": {
       "bundler": "metro",
       "output": "static"
+>>>>>>> f6881e38fa02dd0666ca8455c7402d67815b380e
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
+<<<<<<< HEAD
+          "image": "./assets/images/avatar.jpg",
+=======
+>>>>>>> f6881e38fa02dd0666ca8455c7402d67815b380e
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
