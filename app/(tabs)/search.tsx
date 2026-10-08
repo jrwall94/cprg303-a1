@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useRouter } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import { useState } from "react";
 import { FlatList, Text, TextInput, View } from "react-native";
 import PostCard from "../../components/PostCard";
@@ -17,6 +17,7 @@ export default function SearchScreen() {
 
   return (
     <View style={s.page}>
+      <Stack.Screen options={{ headerShown: false }} />
       <View style={s.titleRow}>
         <Ionicons name="search" size={22} color="#100d0d" />
         <Text style={s.title}>Search</Text>
