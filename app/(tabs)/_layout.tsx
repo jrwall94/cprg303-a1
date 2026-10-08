@@ -1,24 +1,55 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { AppHeader } from "@/components/AppHeader";
 import { Tabs } from "expo-router";
+import { SymbolView } from "expo-symbols";
+import bold from "expo-symbols/androidWeights/bold";
+import regular from "expo-symbols/androidWeights/regular";
+import { Platform } from "react-native";
+
+import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: "#184ce7",
-        tabBarInactiveTintColor: "#100d0d",
+        headerShown: useClientOnlyValue(false, true),
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          ...Platform.select({
+            web: {
+              height: 50,
+              width: 412,
+              alignSelf: "center",
+            },
+            ios: {
+              height: 100,
+              paddingTop: 7,
+            },
+            android: {
+              height: 100,
+              paddingTop: 7,
+            },
+          }),
+        },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "home" : "home-outline"}
-              size={24}
-              color={color}
+          header: () => <AppHeader />,
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "house",
+                android: "home",
+                web: "home",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
@@ -27,24 +58,41 @@ export default function TabLayout() {
         name="search"
         options={{
           title: "Search",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "search" : "search-outline"}
-              size={24}
-              color={color}
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "magnifyingglass",
+                android: "search",
+                web: "search",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
       />
       <Tabs.Screen
-        name="reels"
+        name="media"
         options={{
           title: "Reels",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "film" : "film-outline"}
-              size={24}
-              color={color}
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "play.rectangle.on.rectangle",
+                android: "smart_display",
+                web: "smart_display",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
@@ -53,11 +101,19 @@ export default function TabLayout() {
         name="shop"
         options={{
           title: "Shop",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "storefront" : "storefront-outline"}
-              size={24}
-              color={color}
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "bag",
+                android: "shopping_bag",
+                web: "shopping_bag",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
@@ -66,11 +122,19 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "person-circle" : "person-circle-outline"}
-              size={24}
-              color={color}
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "person.crop.circle",
+                android: "account_circle",
+                web: "account_circle",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
             />
           ),
         }}
