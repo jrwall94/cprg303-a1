@@ -6,7 +6,7 @@ import "react-native-reanimated";
 
 export {
   // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
+  ErrorBoundary
 } from "expo-router";
 
 export const unstable_settings = {
@@ -44,6 +44,10 @@ function RootLayoutNav() {
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="post/[id]"
+        options={{ title: "Posts", headerBackTitle: "Back" }}
+      />
     </Stack>
   );
 }
