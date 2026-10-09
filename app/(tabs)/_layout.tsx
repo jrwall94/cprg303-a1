@@ -3,6 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { Platform } from "react-native";
 
+import { ShopHeader } from "@/components/ShopHeader";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 
 export default function TabLayout() {
@@ -65,6 +66,7 @@ export default function TabLayout() {
         name="shop"
         options={{
           title: "Shop",
+          header: () => <ShopHeader />,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="bag-handle" size={size} color={color} />
           ),
