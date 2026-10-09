@@ -1,0 +1,145 @@
+import { AppHeader } from "@/components/AppHeader";
+import { Tabs } from "expo-router";
+import { SymbolView } from "expo-symbols";
+import bold from "expo-symbols/androidWeights/bold";
+import regular from "expo-symbols/androidWeights/regular";
+import { Platform } from "react-native";
+import { ShopHeader } from "../../components/ShopHeader";
+
+import { useClientOnlyValue } from "@/components/useClientOnlyValue";
+
+export default function TabLayout() {
+  return (
+    <Tabs
+      screenOptions={{
+        headerShown: useClientOnlyValue(false, true),
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          ...Platform.select({
+            web: {
+              height: 50,
+              width: 412,
+              alignSelf: "center",
+            },
+            ios: {
+              height: 100,
+              paddingTop: 7,
+            },
+            android: {
+              height: 100,
+              paddingTop: 7,
+            },
+          }),
+        },
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Home",
+          header: () => <AppHeader />,
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "house",
+                android: "home",
+                web: "home",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: "Search",
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "magnifyingglass",
+                android: "search",
+                web: "search",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="media"
+        options={{
+          title: "Media",
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "play.rectangle.on.rectangle",
+                android: "smart_display",
+                web: "smart_display",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="shop"
+        options={{
+          title: "Shop",
+          header: () => <ShopHeader />,
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "bag",
+                android: "shopping_bag",
+                web: "shopping_bag",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ focused }) => (
+            <SymbolView
+              name={{
+                ios: "person.crop.circle",
+                android: "account_circle",
+                web: "account_circle",
+              }}
+              tintColor="black"
+              size={28}
+              weight={{
+                ios: focused ? "bold" : "regular",
+                android: focused ? bold : regular,
+              }}
+            />
+          ),
+        }}
+      />
+    </Tabs>
+  );
+}
