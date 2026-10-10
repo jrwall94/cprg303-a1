@@ -60,6 +60,12 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="videocam" size={size} color={color} />
           ),
+          tabBarStyle: {
+            backgroundColor: "black",
+            borderTopWidth: 0,
+            height: 100,
+            paddingTop: 7,
+          },
         }}
       />
       <Tabs.Screen
